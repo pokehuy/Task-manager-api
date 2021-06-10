@@ -1,10 +1,12 @@
-const express = require('express')
+const app = require('./app')
+//DELETE THIS BECAUSE IT WAS MOVED TO APP.JS FOR TEST EXPRESS PURPOSE
+/* const express = require('express')
 require('./db/mongoose')
 const userRouter = require('./routers/user')
 const taskRouter = require('./routers/task')
 
-const app = express()
-const port = process.env.PORT
+const app = express() */
+const port = process.env.PORT  // port still here because app.js dont use listen() so it doesnt need port but index.js still
 
 // without middleware :  new request ---> run router handler
 // with middleware :     new request ---> do something ---> run router handler
@@ -60,9 +62,11 @@ app.post('/upload', upload.single('upload'), (req, res) => { // upload.single() 
 }) */
 
 // app.use() to customize server
-app.use(express.json())         // this will automatic parse incomming json to an object so we can access it in our request
+
+//DELETE THIS BECAUSE IT WAS MOVED TO APP.JS FOR TEST EXPRESS PURPOSE
+/* app.use(express.json())         // this will automatic parse incomming json to an object so we can access it in our request
 app.use(userRouter)
-app.use(taskRouter)
+app.use(taskRouter) */
 
 
 /* // THIS WILL BE MOVED TO user.js IN ROUTERS FILE

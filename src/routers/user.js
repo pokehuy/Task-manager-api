@@ -67,7 +67,7 @@ router.post('/users', async (req, res) => {
         /* const token = await user.generateAuthToken() */ // create token before save , not test yet but think it works
         await user.save()
         sendMail({
-            from: 'TASK MANAFER APP <pokehuy11@gmail.com>',
+            from: 'TASK MANAGER APP <pokehuy11@gmail.com>',
             to: `${user.name} <${user.email}>`,
             subject:'Wellcome to Task-manager App',
             //html: '...'
@@ -194,7 +194,7 @@ router.delete('/users/me', auth, async (req, res) => {
         // const user = User.findByIdAndDelete(req.user._id)
         await req.user.remove() // mongoose function Model.prototype.remove()
         sendMail({
-            from: 'TASK MANAFER APP <pokehuy11@gmail.com>',
+            from: 'TASK MANAGER APP <pokehuy11@gmail.com>',
             to: `${req.user.name} <${req.user.email}>`,
             subject:'Thanks and see you soon!',
             text: 'Thanks!',
